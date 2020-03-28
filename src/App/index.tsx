@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import React from 'react'
+import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -11,29 +11,29 @@ const GlobalStyles = createGlobalStyle`
       font-size: 40px;
     }
   }
-`;
+`
 
 const Cheese = styled.h2`
   font-size: 30px;
-`;
+`
 
-interface IThingProps {
-  cheese: String;
-  like: Boolean;
+interface TThingProps {
+  cheese: string
+  like: boolean
 }
 
-const Thing = (props: IThingProps) => {
-  return <Cheese>{props.cheese}</Cheese>;
-};
+const Thing: React.FC<TThingProps> = (props: TThingProps): React.ReactElement => {
+  return <Cheese>{props.cheese}</Cheese>
+}
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
       <h1>App</h1>
       <Thing cheese="camenbert" like={true} />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
